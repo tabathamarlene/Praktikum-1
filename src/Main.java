@@ -26,9 +26,7 @@
             
         dozierender.sprechstundenAnfrageEmpfangen(studierender, "Montag 10:00", "Hilfe bei Aufgabe 1");
             
-        dozierender.feedbackVerwalten(studierender, "Das ist Feedback zu xyz");
-            
-        studierender.feedbackVerwalten(dozierender, "Das ist Feedback zu abc");
+        studierender.feedbackVerwalten(dozierender, "Das ist Feedback zu abc.");
 
         Lehrveranstaltung lehrveranstaltung = new Lehrveranstaltung("Programmierung in Java", 4, 10, 10);
         
@@ -45,7 +43,7 @@
             praktikumsstunde.addAufgabe("Aufgabe 1");
             praktikumsstunde.addAufgabe("Aufgabe 2");
             praktikumsstunde.addAufgabe("Aufgabe 3");
-            
+
 
             lehrveranstaltung.addStudierender(studierender, studierender2, studierender3);
             lehrveranstaltung.addVorlesungsstunde(vorlesungsstunde);

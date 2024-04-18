@@ -53,12 +53,15 @@ import java.util.List;
     
 
         if (teilnehmer.size() >=  maxStudierende) {
-            System.out.println("Maximale Anzahl von Studierenden erreicht!");
+            
+            System.out.println("Maximale Anzahl von Studierenden erreicht!" + " " + "Anzahl Studierende: " + teilnehmer.size());
+            
         
         } else{
-            System.out.println("Wir haben noch Platz!");
+            System.out.println("Wir haben noch Platz!" + " " + "Anzahl Studierende:" + " " + teilnehmer.size());
+            
         }
-        System.out.println("Studierende: " + teilnehmer.size());
+        
     }
     // Methode um eine Vorlesungsstunde hinzuzufügen, zu zählen und ggf. Meldung über Max. auszugeben
     public void addVorlesungsstunde(Vorlesungsstunde vorlesungsstunde) {
