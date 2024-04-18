@@ -1,6 +1,6 @@
 /* Praktikum zu Softwareentwicklung 2, SS24 
- * Aufgabe 1: 1 Git
- * Tabatha Tokar
+ * 1 Git
+ * Tabatha Tokar, Julia Holzwert
  */
 
  public class Main {
@@ -33,7 +33,7 @@
 
             Vorlesungsstunde vorlesungsstunde = new Vorlesungsstunde("Einführung in Java", "01.05.2024", "10:00", "G101");
     
-            Praktikumsstunde praktikumsstunde = new Praktikumsstunde("Java Übungen", "08.05.2024", "10:00", "G111", 10);
+            Praktikumsstunde praktikumsstunde = new Praktikumsstunde("Java Übungen", "08.05.2024", "10:00", "G111");
 
             praktikumsstunde.addAufgabe("Aufgabe 1");
             praktikumsstunde.addAufgabe("Aufgabe 2");

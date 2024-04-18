@@ -1,45 +1,46 @@
 /* Praktikum zu Softwareentwicklung 2, SS24 
- * Aufgabe 1: 1 Git
- * Tabatha Tokar
+ * Aufgabe 4: 1 Git
+ * Tabatha Tokar, Julia Holzwert
  */
+import java.util.ArrayList;
+import java.util.List;
+
 
  public class Lehrveranstaltung {
 
     // Attribute der Lehrveranstaltung
     private String titel;
-    private Studierender[] studierende;
-    private Vorlesungsstunde[] vorlesungsstunden;
-    private Praktikumsstunde[] praktikumsstunden;
-    private int studierendeCount;
-    private int vorlesungsstundenCount;
-    private int praktikumsstundenCount;
+    private List<Studierender> teilnehmer;
+    private List<Vorlesungsstunde> vorlesungsstunden;
+    private List<Praktikumsstunde> praktikumsstunden;
+    private int maxStudierende;
+    private int maxVorlesungsstunden;
+    private int maxPraktikumsstunden;
 
     // Konstruktor der Lehrveranstaltung
     public Lehrveranstaltung(String titel, int maxStudierende, int maxVorlesungsstunden, int maxPraktikumsstunden) {
         this.titel = titel;
-        this.studierende = new Studierender[maxStudierende];
-        this.vorlesungsstunden = new Vorlesungsstunde[maxVorlesungsstunden];
-        this.praktikumsstunden = new Praktikumsstunde[maxPraktikumsstunden];
-        this.studierendeCount = 0;
-        this.vorlesungsstundenCount = 0;
-        this.praktikumsstundenCount = 0;
+        this.teilnehmer = new ArrayList<>();
+        this.vorlesungsstunden = new ArrayList<>();
+        this.praktikumsstunden = new ArrayList<>();
+        this.maxStudierende = maxStudierende;
+        this.maxVorlesungsstunden = maxVorlesungsstunden;
+        this.maxPraktikumsstunden = maxPraktikumsstunden;
+
     }
 
     // Methode um einen Studierenden hinzuzufügen, zu zählen und ggf. Meldung über Max. auszugeben
     public void addStudierender(Studierender studierender) {
-        if (studierendeCount < studierende.length) {
-            studierende[studierendeCount] = studierender;
-            studierendeCount++;
+        if (teilnehmer.size() < maxStudierende) {
+            teilnehmer.add(studierender);
         } else {
             System.out.println("Maximale Anzahl von Studierenden erreicht!");
         }
     }
-
     // Methode um eine Vorlesungsstunde hinzuzufügen, zu zählen und ggf. Meldung über Max. auszugeben
     public void addVorlesungsstunde(Vorlesungsstunde vorlesungsstunde) {
-        if (vorlesungsstundenCount < vorlesungsstunden.length) {
-            vorlesungsstunden[vorlesungsstundenCount] = vorlesungsstunde;
-            vorlesungsstundenCount++;
+        if (vorlesungsstunden.size() < maxVorlesungsstunden) {
+            vorlesungsstunden.add(vorlesungsstunde);
         } else {
             System.out.println("Maximale Anzahl von Vorlesungsstunden erreicht!");
         }
@@ -47,11 +48,10 @@
 
     // Methode um eine Praktikumsstunde hinzuzufügen, zu zählen und ggf. Meldung über Max. auszugeben
     public void addPraktikumsstunde(Praktikumsstunde praktikumsstunde) {
-        if (praktikumsstundenCount < praktikumsstunden.length) {
-            praktikumsstunden[praktikumsstundenCount] = praktikumsstunde;
-            praktikumsstundenCount++;
+        if (praktikumsstunden.size() < maxPraktikumsstunden) {
+            praktikumsstunden.add(praktikumsstunde);
         } else {
-            System.out.println("Maximale Anzahl von Praktikumsstunden erreicht!");
+            System.out.println("Maximale Anzahl von Vorlesungsstunden erreicht!");
         }
     }
 
@@ -59,25 +59,20 @@
     public void anzeigen() {
         System.out.println("Lehrveranstaltung: " + titel);
         System.out.println("Studierende: ");
-        for (int i = 0; i < studierendeCount; i++) {
-            System.out.println("- " + studierende[i].getName());
+        for (Studierender studierender : teilnehmer) {
+            System.out.println("- " + studierender.getName());
         }
 
     // Vorlesungsstunden zählen und anzeigen lassen
-        int a = 0;
-        for (int i = 0; i < vorlesungsstundenCount; i++) {
-        a++;
-    vorlesungsstunden[i].anzeigen();
+        for (Vorlesungsstunde vorlesungsstunde : vorlesungsstunden) {
+            vorlesungsstunde.anzeigen();
         }
-        System.out.println("Vorlesungsstunden: " + a);
+        System.out.println("Vorlesungsstunden: " + vorlesungsstunden.size());
         
     // Praktikumsstunden zählen und anzeigen lassen
-        int b = 0;
-
-        for (int i = 0; i < praktikumsstundenCount; i++) {
-            b++;
-            praktikumsstunden[i].anzeigen();
+       for (Praktikumsstunde praktikumsstunde : praktikumsstunden) {
+        praktikumsstunde.anzeigen();
         }
-        System.out.println("Praktikumsstunden: " + b);
+        System.out.println("Praktikumsstunden: " + praktikumsstunden.size());
     }
 }

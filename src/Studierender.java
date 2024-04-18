@@ -1,6 +1,6 @@
 /* Praktikum zu Softwareentwicklung 2, SS24 
- * Aufgabe 1: 1 Git
- * Tabatha Tokar
+ * Aufgabe 2,3: 1 Git
+* Tabatha Tokar, Julia Holzwert
  */
 
  public class Studierender {

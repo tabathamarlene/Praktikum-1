@@ -1,8 +1,11 @@
 
 /* Praktikum zu Softwareentwicklung 2, SS24 
- * Aufgabe 1: 1 Git
- * Tabatha Tokar
+ * Aufgabe 4: 1 Git
+ * Tabatha Tokar, Julia Holzwert
  */
+
+import java.util.ArrayList;
+import java.util.List;
 
  public class Praktikumsstunde {
 
@@ -11,27 +14,20 @@
     private String datum;
     private String uhrzeit;
     private String raum;
-    private String[] aufgaben;
-    private int aufgabenCount;
+    private List<String> aufgaben;
 
     // Konstruktor der Praktikumsstunde
-    public Praktikumsstunde(String thema, String datum, String uhrzeit, String raum, int maxAufgaben) {
+    public Praktikumsstunde(String thema, String datum, String uhrzeit, String raum) {
         this.thema = thema;
         this.datum = datum;
         this.uhrzeit = uhrzeit;
         this.raum = raum;
-        this.aufgaben = new String[maxAufgaben];
-        this.aufgabenCount = 0;
+        this.aufgaben = new ArrayList<>();
     }
 
-    // Methode um eine Aufgabe hinzuzufügen, zu zählen und ggf. Meldung über Max. auszugeben
+    // Methode um eine Aufgabe hinzuzufügen
     public void addAufgabe(String aufgabe) {
-        if (aufgabenCount < aufgaben.length) {
-            aufgaben[aufgabenCount] = aufgabe;
-            aufgabenCount++;
-        } else {
-            System.out.println("Maximale Anzahl von Aufgaben erreicht!");
-        }
+        aufgaben.add(aufgabe);
     }
 
     // Methode um die Praktikumsstunde und Informationen darüber anzuzeigen
@@ -39,8 +35,8 @@
         System.out.println("Praktikumsstunde: " + thema);
         System.out.println("Datum: " + datum + ", Uhrzeit: " + uhrzeit + ", Raum: " + raum);
         System.out.println("Aufgaben: ");
-        for (int i = 0; i < aufgabenCount; i++) {
-            System.out.println("- " + aufgaben[i]);
+        for (String aufgabe : aufgaben) {
+            System.out.println("- " + aufgabe);
         }
     }
 }

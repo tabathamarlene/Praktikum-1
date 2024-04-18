@@ -1,6 +1,6 @@
 /* Praktikum zu Softwareentwicklung 2, SS24 
- * Aufgabe 1: 1 Git
- * Tabatha Tokar
+ * Aufgabe 2,3: 1 Git
+ * Tabatha Tokar, Julia Holzwert
  */
 
  public class Dozierender {
@@ -19,10 +19,6 @@
     public void frageBeantworten(Studierender studierender, String antwort) {
         System.out.println(name + " beantwortet eine Frage von " + studierender.getName() + ": " + antwort);
     }
-
-private void test(){
-    return;
-}
 
     // Methode um Dozierenden eine Sprechstundenanfrage empfangen zu lassen
     public void sprechstundenAnfrageEmpfangen(Studierender studierender, String termin, String grund) {
