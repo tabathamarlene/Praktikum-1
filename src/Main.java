@@ -15,6 +15,8 @@
         // Beispiel-Nutzung des Projekts
 
         Studierender studierender = new Studierender("Max Mustermann", 12345678, "Informatik");
+        Studierender studierender2 = new Studierender("Max Mustermann2", 12345678, "Informatik");
+        Studierender studierender3 = new Studierender("Max", 12345678, "Informatik");
         Dozierender dozierender = new Dozierender("Prof. Dr. Beispiel", "Informatik", 666);
 
           
@@ -28,21 +30,22 @@
             
         studierender.feedbackVerwalten(dozierender, "Das ist Feedback zu abc");
 
-        Lehrveranstaltung lehrveranstaltung = new Lehrveranstaltung("Programmierung in Java", 10, 10, 10);
+        Lehrveranstaltung lehrveranstaltung = new Lehrveranstaltung("Programmierung in Java", 4, 10, 10);
         
 
             Vorlesungsstunde vorlesungsstunde = new Vorlesungsstunde("Einführung in Java", "01.05.2024", "10:00", "G101");
+            
     
             Praktikumsstunde praktikumsstunde = new Praktikumsstunde("Java Übungen", "08.05.2024", "10:00", "G111");
-
+            lehrveranstaltung.anzeigen();
             praktikumsstunde.addAufgabe("Aufgabe 1");
             praktikumsstunde.addAufgabe("Aufgabe 2");
             praktikumsstunde.addAufgabe("Aufgabe 3");
 
-            lehrveranstaltung.addStudierender(studierender);
+            lehrveranstaltung.addStudierender(studierender, studierender2, studierender3);
             lehrveranstaltung.addVorlesungsstunde(vorlesungsstunde);
             lehrveranstaltung.addPraktikumsstunde(praktikumsstunde);
     
-            lehrveranstaltung.anzeigen();
+            
     }
 }

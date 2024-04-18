@@ -28,22 +28,47 @@ import java.util.List;
         this.maxPraktikumsstunden = maxPraktikumsstunden;
 
     }
+    public void anzeigen() {
+        System.out.println("Lehrveranstaltung: " + titel);
+        for (Studierender studierender : teilnehmer) {
+            System.out.println("- " + studierender.getName());
+        }
+
+    // Vorlesungsstunden zählen und anzeigen lassen
+        
+      
+     
+        
+    // Praktikumsstunden zählen und anzeigen lassen
+       
+    }
 
     // Methode um einen Studierenden hinzuzufügen, zu zählen und ggf. Meldung über Max. auszugeben
-    public void addStudierender(Studierender studierender) {
-        if (teilnehmer.size() < maxStudierende) {
-            teilnehmer.add(studierender);
-        } else {
+    public void addStudierender(Studierender studierender, Studierender studierender2, Studierender studierender3) {
+        
+        teilnehmer.add(studierender);
+        teilnehmer.add(studierender2);
+        teilnehmer.add(studierender3);
+        
+    
+
+        if (teilnehmer.size() >=  maxStudierende) {
             System.out.println("Maximale Anzahl von Studierenden erreicht!");
+        
+        } else{
+            System.out.println("Wir haben noch Platz!");
         }
+        System.out.println("Studierende: " + teilnehmer.size());
     }
     // Methode um eine Vorlesungsstunde hinzuzufügen, zu zählen und ggf. Meldung über Max. auszugeben
     public void addVorlesungsstunde(Vorlesungsstunde vorlesungsstunde) {
+        
         if (vorlesungsstunden.size() < maxVorlesungsstunden) {
             vorlesungsstunden.add(vorlesungsstunde);
         } else {
             System.out.println("Maximale Anzahl von Vorlesungsstunden erreicht!");
         }
+        System.out.println("Vorlesungsstunden: " + vorlesungsstunden.size());
     }
 
     // Methode um eine Praktikumsstunde hinzuzufügen, zu zählen und ggf. Meldung über Max. auszugeben
@@ -53,26 +78,9 @@ import java.util.List;
         } else {
             System.out.println("Maximale Anzahl von Vorlesungsstunden erreicht!");
         }
+        System.out.println("Praktikumsstunden: " + praktikumsstunden.size());
     }
 
     // Methode um die Lehrveranstaltung und Informationen darüber anzuzeigen
-    public void anzeigen() {
-        System.out.println("Lehrveranstaltung: " + titel);
-        System.out.println("Studierende: ");
-        for (Studierender studierender : teilnehmer) {
-            System.out.println("- " + studierender.getName());
-        }
-
-    // Vorlesungsstunden zählen und anzeigen lassen
-        for (Vorlesungsstunde vorlesungsstunde : vorlesungsstunden) {
-            vorlesungsstunde.anzeigen();
-        }
-        System.out.println("Vorlesungsstunden: " + vorlesungsstunden.size());
-        
-    // Praktikumsstunden zählen und anzeigen lassen
-       for (Praktikumsstunde praktikumsstunde : praktikumsstunden) {
-        praktikumsstunde.anzeigen();
-        }
-        System.out.println("Praktikumsstunden: " + praktikumsstunden.size());
-    }
+   
 }
