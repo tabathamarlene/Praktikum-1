@@ -19,6 +19,11 @@
     public void frageBeantworten(Studierender studierender, String antwort) {
         System.out.println(name + " beantwortet eine Frage von " + studierender.getName() + ": " + antwort);
     }
+
+private void test(){
+    return;
+}
+
     // Methode um Dozierenden eine Sprechstundenanfrage empfangen zu lassen
     public void sprechstundenAnfrageEmpfangen(Studierender studierender, String termin, String grund) {
         System.out.println(name + " hat eine Sprechstundenanfrage von " + studierender.getName() + " erhalten für " + termin + " wegen: " + grund);
