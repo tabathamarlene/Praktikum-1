@@ -37,10 +37,15 @@
             
     
             Praktikumsstunde praktikumsstunde = new Praktikumsstunde("Java Übungen", "08.05.2024", "10:00", "G111");
+
             lehrveranstaltung.anzeigen();
+            vorlesungsstunde.anzeigen();
+            praktikumsstunde.anzeigen();
+
             praktikumsstunde.addAufgabe("Aufgabe 1");
             praktikumsstunde.addAufgabe("Aufgabe 2");
             praktikumsstunde.addAufgabe("Aufgabe 3");
+            
 
             lehrveranstaltung.addStudierender(studierender, studierender2, studierender3);
             lehrveranstaltung.addVorlesungsstunde(vorlesungsstunde);

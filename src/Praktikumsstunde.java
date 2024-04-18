@@ -28,15 +28,17 @@ import java.util.List;
     // Methode um eine Aufgabe hinzuzufügen
     public void addAufgabe(String aufgabe) {
         aufgaben.add(aufgabe);
+        System.out.println("- " + aufgabe);
     }
 
     // Methode um die Praktikumsstunde und Informationen darüber anzuzeigen
     public void anzeigen() {
         System.out.println("Praktikumsstunde: " + thema);
         System.out.println("Datum: " + datum + ", Uhrzeit: " + uhrzeit + ", Raum: " + raum);
-        System.out.println("Aufgaben: ");
+        System.out.println("Aufgaben: " );
+
         for (String aufgabe : aufgaben) {
-            System.out.println("- " + aufgabe);
+            addAufgabe(aufgabe);
         }
     }
 }
