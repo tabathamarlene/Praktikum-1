@@ -77,6 +77,5 @@ import java.util.List;
         System.out.println("Praktikumsstunden: " + praktikumsstunden.size());
     }
 
-    // Methode um die Lehrveranstaltung und Informationen darüber anzuzeigen
    
 }
