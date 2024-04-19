@@ -33,13 +33,6 @@ import java.util.List;
         for (Studierender studierender : teilnehmer) {
             System.out.println("- " + studierender.getName());
         }
-
-    // Vorlesungsstunden zählen und anzeigen lassen
-        
-      
-     
-        
-    // Praktikumsstunden zählen und anzeigen lassen
        
     }
 
