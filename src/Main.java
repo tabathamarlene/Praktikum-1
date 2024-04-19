@@ -28,6 +28,8 @@
             
         studierender.feedbackVerwalten(dozierender, "Das ist Feedback zu abc.");
 
+        dozierender.feedbackVerwalten(studierender, "Das ist Feedback zu xyz.");
+
         Lehrveranstaltung lehrveranstaltung = new Lehrveranstaltung("Programmierung in Java", 4, 10, 10);
         
 
