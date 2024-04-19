@@ -25,6 +25,7 @@
         System.out.println(name + " hat eine Sprechstundenanfrage von " + studierender.getName() + " erhalten für " + termin + " wegen: " + grund);
     }
 
+    // Methode um Dozierenden Feedback geben zu lassen
     public void feedbackVerwalten(Studierender studierender, String feedback) {
         System.out.println(name + " gibt Feedback an " + studierender.getName() + ": " + feedback);
     }
